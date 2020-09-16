@@ -1,18 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>recipes</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let recipe of recipes" [routerLink]="['./', recipe.id]">
-      <ion-avatar slot="start">
-        <ion-img [src]="recipe.imageUrl"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        {{recipe.title}}
-      </ion-label>
-    </ion-item>
-  </ion-list>
-</ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="discover">
+      <ion-label>Discover</ion-label>
+      <ion-icon name="restaurant-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="creations">
+      <ion-label>My Creations</ion-label>
+      <ion-icon name="checkbox-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

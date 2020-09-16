@@ -1,3 +1,52 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- <ion-menu menuId="recipesMenu" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>UMN Recipes</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle menu="recipesMenu">
+          <ion-item lines="none" routerLink="/recipes/tabs/discover">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon>
+            <ion-label>Discover Recipes</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="recipesMenu">
+          <ion-item lines="none" routerLink="/recipes/tabs/creations">
+            <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+            <ion-label>My Creations</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu> -->
+
+  <ion-menu menuId="placesMenu" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>UMN Places</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle menu="placesMenu">
+          <ion-item lines="none" routerLink="/places/tabs/discover">
+            <ion-icon slot="start" name="search-outline"></ion-icon>
+            <ion-label>Discover Places</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="placesMenu">
+          <ion-item lines="none" routerLink="/places/tabs/offers">
+            <ion-icon slot="start" name="card-outline"></ion-icon>
+            <ion-label>My Offers</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>
+

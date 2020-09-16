@@ -1,5 +1,7 @@
 {
-  "name": "Week2_21768",
-  "integrations": {},
+  "name": "Mingguan",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
