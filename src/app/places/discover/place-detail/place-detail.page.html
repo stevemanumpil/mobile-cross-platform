@@ -11,11 +11,11 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>{{loadedPlace.title}}</ion-card-title>
-      <ion-card-subtitle>Rp. {{loadedPlace.price}} / night</ion-card-subtitle>
     </ion-card-header>
     <ion-img [src]="loadedPlace.imageUrl"></ion-img>
     <ion-card-content>
-      {{loadedPlace.description}}
+      {{loadedPlace.description}}<br>
+      Price : {{loadedPlace.price}} / night
     </ion-card-content>
   </ion-card>
 </ion-content>

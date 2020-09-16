@@ -26,21 +26,27 @@
   <ion-menu menuId="placesMenu" side="start">
     <ion-header>
       <ion-toolbar>
-        <ion-title>UMN Places</ion-title>
+        <ion-title>UMN BnB</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
         <ion-menu-toggle menu="placesMenu">
           <ion-item lines="none" routerLink="/places/tabs/discover">
-            <ion-icon slot="start" name="search-outline"></ion-icon>
+            <ion-icon slot="start" name="business"></ion-icon>
             <ion-label>Discover Places</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle menu="placesMenu">
           <ion-item lines="none" routerLink="/places/tabs/offers">
-            <ion-icon slot="start" name="card-outline"></ion-icon>
-            <ion-label>My Offers</ion-label>
+            <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+            <ion-label>Your Bookings</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="placesMenu">
+          <ion-item lines="none">
+            <ion-icon slot="start" name="log-out"></ion-icon>
+            <ion-label>Log Out</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
