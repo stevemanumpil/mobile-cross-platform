@@ -9,7 +9,7 @@ const routes: Routes = [
     component: DiscoverPage
   },
   {
-    path: 'detail',
+    path: ':recipeId',
     loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
   }
 ];

@@ -1,24 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>contacts</ion-title>
+    <ion-title>Contacts</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let contact of contacts" [routerLink]="['./', contact.id]">
-      <ion-avatar slot="start">
-        <ion-img [src]="contact.image"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        {{contact.name}}
-      </ion-label>
-      <ion-buttons>
-        <ion-icon name="mail-outline" class="ion-margin-horizontal"></ion-icon>
-        <ion-label>{{contact.email.length}}</ion-label>
-        <ion-icon name="call-outline" class="ion-margin-horizontal"></ion-icon>
-        <ion-label>{{contact.phone.length}}</ion-label>
-      </ion-buttons>
-    </ion-item>
-  </ion-list>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-segment (ionChange)="onFilterUpdate($event)" value="all">
+          <ion-segment-button value="all">
+            <ion-label>All contacts</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="priority">
+            <ion-label>Priority Contacts</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      
+        <ion-list>
+          <ion-item-sliding *ngFor="let contact of contacts" #slidingItem>
+            <ion-item-options side="end">
+              <ion-item-option (click)="priority(contact, slidingItem)">
+                <ion-icon slot="icon-only" name="star"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+      
+            <ion-item [routerLink]="['./', contact.id]">
+              <ion-avatar slot="start">
+                <ion-img [src]="contact.image"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                {{contact.name}}
+              </ion-label>
+              <ion-buttons>
+                <ion-icon name="mail-outline" class="ion-margin-horizontal"></ion-icon>
+                <ion-label>{{contact.email.length}}</ion-label>
+                <ion-icon name="call-outline" class="ion-margin-horizontal"></ion-icon>
+                <ion-label>{{contact.phone.length}}</ion-label>
+              </ion-buttons>
+            </ion-item>
+            
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

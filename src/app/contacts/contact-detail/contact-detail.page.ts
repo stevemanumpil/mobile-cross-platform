@@ -41,7 +41,6 @@ export class ContactDetailPage implements OnInit {
           text: 'Hapus',
           handler: () => {
             this.deleteContact();
-            this.presentToast();
           }
         }
       ]
@@ -61,5 +60,6 @@ export class ContactDetailPage implements OnInit {
   deleteContact(){
     this.contactsService.deleteContact(this.loadedContact.id);
     this.router.navigate(['/contacts']);
+    this.presentToast();
   }
 }
