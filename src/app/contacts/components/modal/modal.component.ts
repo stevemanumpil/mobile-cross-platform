@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController, ModalController, ToastController } from '@ionic/angular';
 
 @Component({
@@ -12,7 +11,6 @@ export class ModalComponent implements OnInit {
   constructor(
     private modalCtrl: ModalController,
     private loadingCtrl: LoadingController,
-    private router: Router,
     private toastCtrl: ToastController
     ) { }
 
@@ -23,6 +21,9 @@ export class ModalComponent implements OnInit {
     });
 
     await loading.present();
+
+    const { role, data } = await loading.onDidDismiss()
+    console.log('Loading dismissed!')
   }
 
   async presentToast() {
