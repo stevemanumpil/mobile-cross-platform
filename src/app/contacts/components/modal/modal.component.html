@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Add Contact</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title color="tertiary">Add Contact</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="onCancel()">
         <ion-icon name="close"></ion-icon>
@@ -28,6 +28,6 @@
     </ion-item>
   </ion-list>
   <ion-button (click)="onSaving()" expand="full" color="primary">
-    Save Contact
+    <ion-label color="tertiary">Save Contact</ion-label>
   </ion-button>
 </ion-content>
