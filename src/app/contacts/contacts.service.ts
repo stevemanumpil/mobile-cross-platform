@@ -39,4 +39,19 @@ export class ContactsService {
       return contact.id !== contactId;
     })
   }
+
+  addContact(contact: Contact){
+    this.contacts.push(contact)
+  }
+
+  editContact(contact: Contact){
+    const index = this.contacts.findIndex( item => {
+      return item.id === contact.id
+    })
+    this.contacts[index].id = contact.id;
+    this.contacts[index].name = contact.name;
+    this.contacts[index].email = contact.email;
+    this.contacts[index].phone = contact.phone;
+    this.contacts[index].image = contact.image;
+  }
 }

@@ -6,7 +6,12 @@ import { CreationPage } from './creation.page';
 const routes: Routes = [
   {
     path: '',
-    component: CreationPage
+    redirectTo: 'create',
+    pathMatch: 'full'
+  },
+  {
+    path: 'create',
+    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
   }
 ];
 

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title color="tertiary">Add Contact</ion-title>
+    <ion-title color="tertiary">Edit Contact</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="onCancel()">
         <ion-icon name="close"></ion-icon>
@@ -10,25 +10,25 @@
 </ion-header>
 
 <ion-content>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <form [formGroup]="form">
     <ion-list>
       <ion-list-header>
-        <ion-label>New Contact</ion-label>
+        <ion-label>Edit Contact</ion-label>
       </ion-list-header>
       <ion-item>
         <ion-label position="floating">Name</ion-label>
-        <ion-input type="text" ngModel name="name" #nameCtrl="ngModel" required></ion-input>
+        <ion-input type="text" formControlName="name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" ngModel name="email" #emailCtrl="ngModel" required email></ion-input>
+        <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Telephone</ion-label>
-        <ion-input type="number" ngModel name="telephone" #telephoneCtrl="ngModel" required></ion-input>
+        <ion-input type="text" formControlName="phone"></ion-input>
       </ion-item>
     </ion-list>
-    <ion-button (click)="onSaving()" type="submit" expand="full" color="primary" [disabled]="!form.valid">
+    <ion-button (click)="onSubmit()" expand="full" color="primary">
       <ion-label color="tertiary">Save Contact</ion-label>
     </ion-button>
   </form>

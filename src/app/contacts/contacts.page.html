@@ -28,6 +28,9 @@
               <ion-item-option (click)="priority(contact, slidingItem)">
                 <ion-icon slot="icon-only" name="star"></ion-icon>
               </ion-item-option>
+              <ion-item-option (click)="editContact(contact, slidingItem)" color="warning">
+                <ion-icon slot="icon-only" name="create"></ion-icon>
+              </ion-item-option>
             </ion-item-options>
       
             <ion-item [routerLink]="['./', contact.id]">
